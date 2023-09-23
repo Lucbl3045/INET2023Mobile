@@ -175,8 +175,7 @@ const LLAMADAS: Llamada[] = [
 
 const USERS: UserData[] = [
     {
-        email: "string@gmail.com",
-        name: "asd",
+        code: "1",
         password: "12345",
     }
 ]

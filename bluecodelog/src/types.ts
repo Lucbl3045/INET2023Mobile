@@ -12,18 +12,17 @@ interface Llamada {
 }
 
 interface User {
-    email: string
-    name: string
+    code: string
+    password: string
 }
 
 interface UserData {
-    email: string,
-    name: string,
+    code: string,
     password: string,
 }
 
 interface AuthData {
-    email: string
+    code: string
     password: string
 }
 

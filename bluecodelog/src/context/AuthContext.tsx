@@ -32,16 +32,16 @@ function AuthContextProvider({ children }: ContextProps) {
 
     async function authenticate(value: AuthData) {
         setLoading(true)
-        const returnedUser = USERS.find(user => user.email === value.email)
+        const returnedUser = USERS.find(user => user.code === value.code)
         if (returnedUser?.password === value.password) {
             await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify({
-                email: returnedUser.email,
-                name: returnedUser.name
+                code: returnedUser.code,
+                password: returnedUser.password
             }))
             setIsAuthenticated(true)
             setUser({
-                email: value.email,
-                name: returnedUser?.name
+                code: value.code,
+                password: returnedUser?.password
             })
             setError("")
         }
@@ -51,25 +51,28 @@ function AuthContextProvider({ children }: ContextProps) {
             setUser(null)
         }
         setLoading(false)
-        /*// try {
-        //     const response = await fetch({
-        //         body: JSON.stringify(value),
-        //         url: "",
-        //         headers: {
-        //             "Content-Type": "application/json"
-        //         }
-        //     })
+        /* try {
+             const response = await fetch({
+                 body: JSON.stringify(value),
+                 url: "",
+                 headers: {
+                     "Content-Type": "application/json"
+                 }
+             })
 
-        //     if(response.data[0] === true){
+             if(response.data[0] === true){
+            setIsAuthenticated(true)
             setUser({
-                email = response.data[1]
-                name = response.data[2]
+                code = response.data[1]
+                password = response.data[2]
             })
+             setError("")
+             setLoading(false)
         }
 
         */
     }
-
+//Logs out of the account
     function logout() {
         AsyncStorage.removeItem(STORAGE_KEY)
         setIsAuthenticated(false)
@@ -92,6 +95,10 @@ function AuthContextProvider({ children }: ContextProps) {
         setIsAuthenticated(false)
         setLoading(false)
     }
+    async function GetCards() {
+       // fetch()
+    }
+    //?usp=drive_link
 
     useEffect(() => {
         getAuthenticated()

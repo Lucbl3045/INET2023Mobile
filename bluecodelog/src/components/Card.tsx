@@ -20,11 +20,12 @@ const style = StyleSheet.create(
     {
         container:{
             borderCurve: "circular",
-            borderColor: "#1a1918",
+            //borderColor: "#1a1918",
+            borderColor: "#0f0301",
             borderRadius: 10,
             borderWidth: 3,
             marginBottom:3,
-            backgroundColor:"#fffdf7"
+            backgroundColor:"#022c5e"
         },
         top:{
             flex:1,
@@ -38,16 +39,20 @@ const style = StyleSheet.create(
             paddingBottom: 10
         },
         location:{
+            color:"#fffdf7",
             fontStyle: "italic",
             fontSize:14,
             fontWeight:"400",
         paddingLeft:5
         },
         name:{
+            color:"#fffdf7",
             fontSize:18,
             fontWeight:"800"
         },
-        time:{}
+        time:{
+            color:"#fffdf7",
+        }
     })
 
 
